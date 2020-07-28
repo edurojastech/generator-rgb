@@ -1,3 +1,11 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
 #app{
     display: flex;
     flex-direction: column;
@@ -16,7 +24,7 @@
 }
 
 .form-control, .btn-warning{
-    width: 250px !important;
+    width: 270px !important;
     margin: auto auto !important;
     box-shadow: 5px 5px 5px gray;
 }
