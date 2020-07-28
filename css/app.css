@@ -6,18 +6,23 @@
     /* padding: 100px; */
 }
 
-.form-control{
+#exibirCor{
+    width: 100%;
+    /* height: 100px; */
+    background-color: whitesmoke;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.form-control, .btn-warning{
+    width: 250px !important;
+    margin: auto auto !important;
     box-shadow: 5px 5px 5px gray;
 }
 
-#exibirCor{
-    width: 100%;
-    /* height: 50px; */
-    background-color: whitesmoke;
-    margin-top: 20px;
-}
-
-.form-control, .btn-info{
-    width: 250px !important;
-    margin: auto auto !important;
+.btn-warning{
+    background-color: #0a3d62 !important;
+    border: none !important;
+    color: whitesmoke !important;
 }
