@@ -73,7 +73,9 @@ $(document).ready(()=>{
                     <div class="modal-body">
                         <div id="exibirCor">
                             <p class="text-center p-2" style="font-weight: 900;">
-                                rgb(<span id="corR">R</span>, <span id="corG">G</span>, <span id="corB">B</span>)
+                                <input type='text' id="corRGB">
+                                <br><br>
+                                <span id="copiar">Copy</span>
                             </p>
                         </div>
                         <div id='msgAlerta' class="alert alert-dark text-center" role="alert">

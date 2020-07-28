@@ -10,10 +10,11 @@ $(document).ready(()=>{
     let corG = document.getElementById("corG")
     let corB = document.getElementById("corB")
 
+    let corRGB = document.getElementById("corRGB")
+
     //get div exibirCor
     let exibirCor = document.querySelector("#exibirCor")
     exibirCor.style.display = 'none'
-
 
     function somenteNumeros(num) {
         var er = /[^0-9.]/;
@@ -24,10 +25,9 @@ $(document).ready(()=>{
         }
     }
 
-
     function fnRGB(r, g, b){
         console.log(r, g, b)
-
+        let resultadoCor = `rgb(${r}, ${g}, ${b})`
 
         if(r == "" || g == "" || b == ""){
             // alert("Dado informado inválido!")
@@ -37,12 +37,14 @@ $(document).ready(()=>{
             $("#exampleModalLongTitle").text("Alerta!")
 
         }else if(r == "255" && g == "255" && b == "255"){
+            corRGB.style.color = "black"
             exibirCor.classList.add("text-dark")
             exibirCor.classList.remove("text-white")
             exibirCor.style.display = 'block'
             $("#modalResultado").modal()
             $("#msgAlerta, #imgAlert").hide()
             $("#exampleModalLongTitle").text("Cor gerada!")
+            $("#copiar").css("border", "1px solid black")
         }else{
             exibirCor.classList.add("text-white")
             exibirCor.classList.remove("text-dark")
@@ -50,9 +52,12 @@ $(document).ready(()=>{
             $("#modalResultado").modal()
             $("#msgAlerta, #imgAlert").hide()
             $("#exampleModalLongTitle").text("Cor gerada!")
+            $("#copiar").css("border", "1px solid whitesmoke")
         }
-        corR.textContent = r; corG.textContent = g; corB.textContent = b
+
+        corRGB.value = resultadoCor
         exibirCor.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+        corRGB.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
     }
 
     $("#btnGerar").click(()=>{
@@ -64,5 +69,18 @@ $(document).ready(()=>{
 
     $("#btnLimpar").click(()=>{
         location.reload()
+    })
+
+    function copiar() {
+        var copyText = document.getElementById("corRGB");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        alert(`Color ${copyText.value} copy!`);
+        $('#modalResultado').modal('hide')
+    }
+    
+    $("#copiar").click(()=>{
+        copiar()
     })
 })

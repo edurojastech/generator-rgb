@@ -34,3 +34,18 @@ body{
     border: none !important;
     color: whitesmoke !important;
 }
+#copiar{
+    /* border: 1px solid whitesmoke; */
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#corRGB{
+    text-align: center;
+    font-weight: 900;
+    border: none;
+    color: white;
+    pointer-events: none;
+}
