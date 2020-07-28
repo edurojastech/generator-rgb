@@ -39,7 +39,7 @@ $(document).ready(()=>{
     // === Funções da aplicação ===
     function componenteFomrRGB(idColor, valueColor){
         return `
-        <div class="form-group mb-4">
+        <div class="form-group mb-1">
             <div class="col-12">
                 <input type="email" class="form-control form-control-lg text-center" id=${idColor} placeholder="Value ${valueColor}" maxlength="3">
             </div>
@@ -48,7 +48,7 @@ $(document).ready(()=>{
 
     function botoes(idBtn, conteudo, img){
         return`
-        <div class='mb-3'>
+        <div class='mb-1'>
             <button type="button" class="btn btn-warning btn-lg" id="${idBtn}">
                 ${conteudo} <img src="${img}" class="img-fluid" width="30">
             </button>
