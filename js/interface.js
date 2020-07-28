@@ -15,7 +15,7 @@ $(document).ready(()=>{
     }
 
     // componentes:
-    const componenteImg = `<div class='pt-5'><img src="img/paint.png" class="img-fluid mt-5" width="100"/></div>`;
+    const componenteImg = `<div class='mt-5'><img src="img/paint.png" class="img-fluid" width="100"/></div>`;
     const componenteTitle = `<div><h2 class="text-white lead mt-3">WebApp Color RGB</h2><hr class='mb-4 text-white bg-light'></div>`
     const formRed = componenteFomrRGB('formRed', 'red');
     const formGreen = componenteFomrRGB('formGreen', 'Green');
