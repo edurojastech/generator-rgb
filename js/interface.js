@@ -2,7 +2,7 @@ $(document).ready(()=>{
     //App
     const app = {
         corpo: document.getElementById("app"),
-        estilos: ["bg-dark", "lead", "animated", "fadeIn"],
+        estilos: ["bgApp", "lead", "animated", "fadeIn"],
         activeClass(){
             this.estilos.forEach(element => {
                 this.corpo.classList.add(element);
@@ -36,7 +36,7 @@ $(document).ready(()=>{
         boxResultado
     ]
 
-    // === Funções da aplicação ===
+    // =============== Funções da aplicação ===============
     function componenteFomrRGB(idColor,color){
         return `
         <div class="form-group mt-2">
@@ -79,7 +79,7 @@ $(document).ready(()=>{
                             </p>
                         </div>
                         <div id='msgAlerta' class="alert alert-dark text-center" role="alert">
-                            Dados inválidos!
+                            Dados inválidos! <br> preencher com valores entre 0 e 255.
                         </div>
                     </div>
                 </div>

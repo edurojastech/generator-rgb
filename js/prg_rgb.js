@@ -1,19 +1,13 @@
 $(document).ready(()=>{
     $("#msgAlerta").hide()
     //get forms
-    let valueR = document.getElementById("formRed")
-    let valueG = document.getElementById("formGreen")
-    let valueB = document.getElementById("formBlue")
-
-    //get span id
-    let corR = document.getElementById("corR")
-    let corG = document.getElementById("corG")
-    let corB = document.getElementById("corB")
-
-    let corRGB = document.getElementById("corRGB")
+    const valueR = document.getElementById("formRed")
+    const valueG = document.getElementById("formGreen")
+    const valueB = document.getElementById("formBlue")
+    const corRGB = document.getElementById("corRGB")
 
     //get div exibirCor
-    let exibirCor = document.querySelector("#exibirCor")
+    const exibirCor = document.querySelector("#exibirCor")
     exibirCor.style.display = 'none'
 
     function somenteNumeros(num) {
@@ -21,13 +15,13 @@ $(document).ready(()=>{
         er.lastIndex = 0;
         var campo = num;
         if (er.test(campo.value)) {
-        campo.value = "";
+            campo.value = "";
         }
     }
 
     function fnRGB(r, g, b){
         console.log(r, g, b)
-        let resultadoCor = `rgb(${r}, ${g}, ${b})`
+        const resultadoCor = `rgb(${r}, ${g}, ${b})`
 
         if(r == "" || g == "" || b == ""){
             // alert("Dado informado inválido!")
@@ -46,18 +40,33 @@ $(document).ready(()=>{
             $("#exampleModalLongTitle").text("Cor gerada!")
             $("#copiar").css("border", "1px solid black")
         }else{
-            exibirCor.classList.add("text-white")
-            exibirCor.classList.remove("text-dark")
-            exibirCor.style.display = 'block'
-            $("#modalResultado").modal()
-            $("#msgAlerta, #imgAlert").hide()
-            $("#exampleModalLongTitle").text("Cor gerada!")
-            $("#copiar").css("border", "1px solid whitesmoke")
-        }
 
+            r = parseInt(r); g = parseInt(g); b = parseInt(b)
+
+            if(r > 255 || g > 255 || b > 255){
+                exibirCor.style.display = 'none'
+                $("#msgAlerta").show()
+                $("#modalResultado").modal()
+                $("#exampleModalLongTitle").text("Alerta!")
+            }else{
+                exibirCor.classList.add("text-white")
+                exibirCor.classList.remove("text-dark")
+                exibirCor.style.display = 'block'
+                $("#modalResultado").modal()
+                $("#msgAlerta, #imgAlert").hide()
+                $("#exampleModalLongTitle").text("Cor gerada!")
+                $("#copiar").css("border", "1px solid whitesmoke")
+            }
+        }
         corRGB.value = resultadoCor
         exibirCor.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
         corRGB.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+    }
+
+    function clearForms(){
+        valueR.value = ""
+        valueG.value = ""
+        valueB.value = ""
     }
 
     $("#btnGerar").click(()=>{
@@ -65,10 +74,11 @@ $(document).ready(()=>{
         somenteNumeros(valueG)
         somenteNumeros(valueB)
         fnRGB(valueR.value, valueG.value, valueB.value)
+        clearForms()
     })
 
     $("#btnLimpar").click(()=>{
-        location.reload()
+        clearForms()
     })
 
     function copiar() {

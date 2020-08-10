@@ -6,6 +6,14 @@ body{
     padding-top: 7px;
 }
 
+.bgApp{
+    background-image: url('../img/bg2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} 
+
 #app{
     display: flex;
     flex-direction: column;
