@@ -23,6 +23,20 @@ $(document).ready(()=>{
     const btnGerar = botoes('btnGerar', 'Gerar', 'img/up.png');
     const btnLimpar = botoes('btnLimpar', 'Limpar', 'img/delete.png');
     const boxResultado = modalResultado();
+    const autorApp = "Eduardo Rojas"
+    const linkAutor = "href='http://eduardorojas.com.br/'"
+    const footer = `
+        <div class="footer bg-dark pt-2 lead">
+            <p>Desenvolvido por 
+                <b> 
+                    <a style='text-decoration: none; color: white;' 
+                    ${linkAutor} target='_blank'>
+                        <u>${autorApp}</u>
+                    </a>
+                </b>
+            </p>
+        </div>
+    `
 
     // Inserindo os componentes
     const componentes = [
@@ -33,7 +47,8 @@ $(document).ready(()=>{
         formBlue,
         btnGerar,
         btnLimpar,
-        boxResultado
+        boxResultado,
+        footer
     ]
 
     // =============== Funções da aplicação ===============
@@ -50,7 +65,7 @@ $(document).ready(()=>{
     function botoes(idBtn, conteudo, img){
         return`
         <div class='mt-2'>
-            <button type="button" class="btn btn-warning btn-lg" id="${idBtn}">
+            <button type="button" class="btn btn-warning btn-lg mb-2" id="${idBtn}">
                 ${conteudo} <img src="${img}" class="img-fluid" width="30">
             </button>
         </div>`
