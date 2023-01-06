@@ -102,11 +102,11 @@ $(document).ready(()=>{
         </div>`
     }
 
-    function render(){
+    function renderizarComponentes(){
         app.activeClass()
         app.insertComponents(componentes)
     }
 
     //Função de renderização (principal)
-    render()
+    renderizarComponentes()
 })
