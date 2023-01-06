@@ -11,16 +11,15 @@ $(document).ready(()=>{
     exibirCor.style.display = 'none'
 
     function somenteNumeros(num) {
-        var er = /[^0-9.]/;
+        let er = /[^0-9.]/;
         er.lastIndex = 0;
-        var campo = num;
+        let campo = num;
         if (er.test(campo.value)) {
             campo.value = "";
         }
     }
 
     function fnRGB(r, g, b){
-        console.log(r, g, b)
         const resultadoCor = `rgb(${r}, ${g}, ${b})`
 
         if(r == "" || g == "" || b == ""){
@@ -82,7 +81,7 @@ $(document).ready(()=>{
     })
 
     function copiar() {
-        var copyText = document.getElementById("corRGB");
+        let copyText = document.getElementById("corRGB");
         copyText.select();
         copyText.setSelectionRange(0, 99999)
         document.execCommand("copy");
