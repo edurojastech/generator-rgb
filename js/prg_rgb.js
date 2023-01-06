@@ -48,10 +48,7 @@ $(document).ready(()=>{
                 $("#modalResultado").modal()
                 $("#exampleModalLongTitle").text("Alerta!")
             }else{
-                r > 250 || g > 250 || b || 250
-                    ? ($("#corRGB").css("color", "#000"), $("#corRGB").css("border", "solid 1px #000"))
-                    : (exibirCor.classList.add("text-white"), exibirCor.classList.remove("text-dark"))
-               
+                exibirCor.classList.add("text-white"), exibirCor.classList.remove("text-dark")
                 exibirCor.style.display = 'block'
                 $("#modalResultado").modal()
                 $("#msgAlerta, #imgAlert").hide()
