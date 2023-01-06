@@ -49,8 +49,8 @@ $(document).ready(()=>{
                 $("#exampleModalLongTitle").text("Alerta!")
             }else{
                 r > 250 && g > 250 && b > 250
-                    ? (exibirCor.classList.add("text-white"), exibirCor.classList.remove("text-dark"))
-                    : (exibirCor.classList.add("text-dark"), exibirCor.classList.remove("text-white"))
+                    ? (exibirCor.classList.add("text-dark"), exibirCor.classList.remove("text-white"))
+                    : (exibirCor.classList.add("text-white"), exibirCor.classList.remove("text-dark"))
                
                 exibirCor.style.display = 'block'
                 $("#modalResultado").modal()
