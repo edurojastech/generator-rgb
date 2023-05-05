@@ -1,62 +1,62 @@
-$(document).ready(()=>{
-    //App
-    const app = {
-        corpo: document.getElementById("app"),
-        estilos: ["bg-dark", "lead", "animated", "fadeIn"],
-        activeClass(){
-            this.estilos.forEach(element => {
-                this.corpo.classList.add(element);
-            });
-        },
+$(document).ready(() => {
+  //App
+  const app = {
+    corpo: document.getElementById("app"),
+    estilos: ["bg-dark", "lead", "animated", "fadeIn"],
+    activeClass() {
+      this.estilos.forEach((element) => {
+        this.corpo.classList.add(element);
+      });
+    },
 
-        insertComponents(componente){
-            this.corpo.innerHTML = componente.join('');
-        }
-    }
+    insertComponents(componente) {
+      this.corpo.innerHTML = componente.join("");
+    },
+  };
 
-    // componentes:
-    const componenteImg = `<div><img src="img/paint.png" class="img-fluid mt-5" width="100"/></div>`;
-    const componenteTitle = `<div><h2 class="text-white lead">WebApp Color RGB</h2><hr class='text-white bg-light'></div>`
-    const formRed = componenteFomrRGB('formRed', 'red');
-    const formGreen = componenteFomrRGB('formGreen', 'Green');
-    const formBlue = componenteFomrRGB('formBlue', 'Blue');
-    const btnGerar = botoes('btnGerar', 'Gerar');
-    const btnLimpar = botoes('btnLimpar', 'Limpar');
-    const boxResultado = modalResultado();
+  // componentes:
+  const componenteImg = `<div><img src="img/paint.webp" class="img-fluid mt-5" width="100"/></div>`;
+  const componenteTitle = `<div><h2 class="text-white lead">WebApp Color RGB</h2><hr class='text-white bg-light'></div>`;
+  const formRed = componenteFomrRGB("formRed", "red");
+  const formGreen = componenteFomrRGB("formGreen", "Green");
+  const formBlue = componenteFomrRGB("formBlue", "Blue");
+  const btnGerar = botoes("btnGerar", "Gerar");
+  const btnLimpar = botoes("btnLimpar", "Limpar");
+  const boxResultado = modalResultado();
 
-    // Inserindo os componentes
-    const componentes = [
-        componenteImg,
-        componenteTitle,
-        formRed,
-        formGreen,
-        formBlue,
-        btnGerar,
-        btnLimpar,
-        boxResultado
-    ]
+  // Inserindo os componentes
+  const componentes = [
+    componenteImg,
+    componenteTitle,
+    formRed,
+    formGreen,
+    formBlue,
+    btnGerar,
+    btnLimpar,
+    boxResultado,
+  ];
 
-    // === Funções da aplicação ===
-    function componenteFomrRGB(idColor, valueColor){
-        return `
+  // === Funções da aplicação ===
+  function componenteFomrRGB(idColor, valueColor) {
+    return `
         <div class="form-group mb-4">
             <div class="col-12">
                 <input type="email" class="form-control form-control-lg text-center" id=${idColor} placeholder="Value ${valueColor}" maxlength="3">
             </div>
-        </div>`
-    }
+        </div>`;
+  }
 
-    function botoes(idBtn, conteudo){
-        return`
+  function botoes(idBtn, conteudo) {
+    return `
         <div class='mb-3'>
             <button type="button" class="btn btn-info btn-lg" id="${idBtn}">
                 ${conteudo} 
             </button>
-        </div>`
-    }
+        </div>`;
+  }
 
-    function modalResultado(){
-        return`
+  function modalResultado() {
+    return `
         <div class="modal fade" id="modalResultado" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -75,16 +75,20 @@ $(document).ready(()=>{
                     </div>
                 </div>
             </div>
-        </div>`
-    }
+        </div>`;
+  }
 
-    function render(){
-        app.activeClass()
-        app.insertComponents(componentes)
-        $("#btnGerar").click(()=>{$("#modalResultado").modal()})
-        $("#btnLimpar").click(()=>{location.reload()})
-    }
+  function render() {
+    app.activeClass();
+    app.insertComponents(componentes);
+    $("#btnGerar").click(() => {
+      $("#modalResultado").modal();
+    });
+    $("#btnLimpar").click(() => {
+      location.reload();
+    });
+  }
 
-    //Função de renderização (principal)
-    render()    
-})
+  //Função de renderização (principal)
+  render();
+});
