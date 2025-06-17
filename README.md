@@ -3,10 +3,7 @@
 Gerador de cores RGB aleatórias com visualização em tempo real!  
 Simples, direto e feito com HTML, CSS e JavaScript puro.
 
-<div style='width: 240px'>
-  ![image](https://github.com/user-attachments/assets/4dbce4f3-9896-4994-a80a-11b36fc9c334)
-</div>
-
+<img width='240px' src=![image](https://github.com/user-attachments/assets/4dbce4f3-9896-4994-a80a-11b36fc9c334) /> 
 
 ## 🚀 Demonstração
 
