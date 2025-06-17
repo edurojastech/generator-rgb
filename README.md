@@ -3,7 +3,8 @@
 Gerador de cores RGB aleatórias com visualização em tempo real!  
 Simples, direto e feito com HTML, CSS e JavaScript puro.
 
-![Screenshot do projeto](https://raw.githubusercontent.com/edurojastech/generator-rgb/main/assets/screenshot.png) <!-- ajuste se necessário -->
+![image](https://github.com/user-attachments/assets/4dbce4f3-9896-4994-a80a-11b36fc9c334) <!-- ajuste se necessário -->
+
 
 ## 🚀 Demonstração
 
